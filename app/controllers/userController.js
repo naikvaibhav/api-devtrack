@@ -560,7 +560,7 @@ let forgotPassword = (req, res) => {
       };
       secret = result.password + "-" + result.createdOn.getTime();
       const token = jwt.sign(payload, secret, { expiresIn: "30m" });
-      let link = `http://localhost:4200/resetPassword/${payload.userId}/${token}`;
+      let link = `https://devtrack.naikvaibhav.online/resetPassword/${payload.userId}/${token}`;
 
       email.emailOnResetPassword(payload.email, link);
       let apiResponse = response.generate(
