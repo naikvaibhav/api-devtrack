@@ -5,6 +5,8 @@ appConfig.allowedCorsOrigin = "*";
 appConfig.env = "dev";
 appConfig.db = {
   uri: "mongodb://127.0.0.1:27017/devTrackDB",
+  // uri:
+  //   "mongodb+srv://vaibhav:vaibhav@vncluster-dhl0q.mongodb.net/devTrackDB?retryWrites=true&w=majority",
 };
 appConfig.apiVersion = "/api/v1";
 
