@@ -38,12 +38,13 @@ let signUpFunction = async (req, res) => {
     );
     return res.send(apiResponse);
   }
-  if (!req.body.avatar) {
-    //   req.body.avatar =
-    //     "https://project-images-upload.s3.amazonaws.com/default-avatar.jpg";
-    // } else {
+  if (req.body.avatar == "undefined") {
+    req.body.avatar =
+      "https://project-images-upload.s3.amazonaws.com/default-avatar.jpg";
+  } else {
     req.body.avatar = req.body.avatar;
   }
+
   // email is not registered hence save the new user to database
   let newUser = new UserModel({
     userId: shortid.generate(),
